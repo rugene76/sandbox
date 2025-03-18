@@ -3,6 +3,7 @@ blueprint:
   description: Regularly test all entities' status to check for unavailability.
   domain: automation
   source_url: https://github.com/rugene/unavailable_entities.yaml
+# see : https://community.home-assistant.io/t/unavailable-entity-detection-notification/337272
 
   # Blueprint Inputs
   input:
@@ -141,7 +142,8 @@ variables:
         {% endif %}
     {% endfor %}
 
-    {{"⤵ \n- "}}{{result.includedEntities|join('\n- ')}}
+   # {{"⤵ \n- "}}{{result.includedEntities|join('\n- ')}}
+    {{'<br>'}}{{result.includedEntities|join('<br> ')}}
 
 # Triggers
 trigger:
