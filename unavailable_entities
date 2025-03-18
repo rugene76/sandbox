@@ -141,9 +141,10 @@ variables:
           {% set result.includedEntities = result.includedEntities + [state.name] %}
         {% endif %}
     {% endfor %}
+  
+    {{"<br>"}}{{result.includedEntities|join('<br> ')}}
 
-   # {{"⤵ \n- "}}{{result.includedEntities|join('\n- ')}}
-    {{'<br>'}}{{result.includedEntities|join('<br> ')}}
+# {{"⤵ \n- "}}{{result.includedEntities|join('\n- ')}}
 
 # Triggers
 trigger:
